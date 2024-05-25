@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('assets/auth/css/style.css') }}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('assets/auth/images/favicon.png') }}" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
 <div class="container-scroller">
@@ -308,6 +309,19 @@
 
 
 @yield('contentAuth')
+
+
+        <script>
+            @if(Session::has('success'))
+            swal("Good job!", "{{ Session::get('success') }}", "success");
+            @endif
+            @if(Session::has('update'))
+            swal("Good job!", "{{ Session::get('update') }}", "info");
+            @endif
+            @if(Session::has('danger'))
+            swal("Good job!", "{{ Session::get('danger') }}", "error");
+            @endif
+        </script>
 
 
     <!-- partial:partials/_footer.html -->

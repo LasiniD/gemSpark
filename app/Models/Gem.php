@@ -20,7 +20,7 @@ class Gem extends Model
         'is_available',
         'slug',
         'type_id',
-        'color_id',
+        'colour_id',
         'shape_id',
     ];
 }
