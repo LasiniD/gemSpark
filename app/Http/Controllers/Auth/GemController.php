@@ -17,7 +17,8 @@ class GemController extends Controller
      */
     public function index()
     {
-        return view('auth.gems.index');
+        $gems = Gem::with(['type', 'colour', 'shape'])->get();
+        return view('auth.gems.index', ['gems' => $gems]);
     }
 
     /**

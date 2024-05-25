@@ -22,6 +22,8 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('assets/auth/images/favicon.png') }}" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css" rel="stylesheet">
 </head>
 <body>
 <div class="container-scroller">
@@ -201,17 +203,17 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                        <span class="menu-title">Basic UI Elements</span>
+                        <span class="menu-title">Gems</span>
                         <i class="menu-arrow"></i>
                         <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                     </a>
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
+                                <a class="nav-link" href="{{ route('gems.index') }}">Gems</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a>
+                                <a class="nav-link" href="{{ route('gems.create') }}">Create Gems</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
@@ -337,8 +339,12 @@
 <!-- main-panel ends -->
 </div>
 </div>
+
 <!-- container-scroller -->
 <!-- plugins:js -->
+
+@yield('scripts')
+
 <script src="{{ asset('assets/auth/vendors/js/vendor.bundle.base.js') }}"></script>
 <!-- endinject -->
 <!-- Plugin js for this page -->
@@ -355,6 +361,8 @@
 <!-- Custom js for this page -->
 <script src="{{ asset('assets/auth/js/dashboard.js') }}"></script>
 <!-- End custom js for this page -->
+
+
 </body>
 </html>
 

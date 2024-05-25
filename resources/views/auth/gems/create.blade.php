@@ -7,7 +7,7 @@
                 <h3 class="page-title"> Gems </h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Gems</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('gems.index') }}">Gems</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Create gems</li>
                     </ol>
                 </nav>

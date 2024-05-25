@@ -23,4 +23,19 @@ class Gem extends Model
         'colour_id',
         'shape_id',
     ];
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+
+    public function colour()
+    {
+        return $this->belongsTo(Colour::class);
+    }
+
+    public function shape()
+    {
+        return $this->belongsTo(Shape::class);
+    }
 }
