@@ -37,7 +37,6 @@
 </head>
 
 <body id="body">
-
 <!-- Header Start -->
 <header class="navigation">
     <div class="container">
@@ -62,14 +61,11 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="/">Home</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="ion-ios-arrow-down"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="portfolio.html">Login</a></li>
-                                        <li><a href="portfolio-single.html">Register</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="service.html">Service</a></li>
+                                @if(Auth::user())
+                                    @if(Auth::user()->role == 'ADMIN')
+                                        <li><a href="{{ route('auth.dashboard') }}">ADMIN</a></li>
+                                    @endif
+                                @endif
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <span class="ion-ios-arrow-down"></span></a>
                                     <ul class="dropdown-menu">
@@ -91,6 +87,22 @@
                                     </ul>
                                 </li>
                                 <li><a href="contact.html">Contact</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="ion-ios-arrow-down"></span></a>
+                                    <ul class="dropdown-menu">
+                                        @guest
+                                            <li><a href="{{ route('login') }}">Log in</a></li>
+
+                                            @if (Route::has('register'))
+                                                <li><a href="{{ route('register') }}">Register</a></li>
+                                            @endif
+                                        @endguest
+                                        @if(Auth::user())
+                                            <li><a>Profile</a></li>
+                                            <li><a href="{{ route('logout') }}">Logout</a></li>
+                                        @endif
+                                    </ul>
+                                </li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->

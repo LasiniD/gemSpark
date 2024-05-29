@@ -16,6 +16,17 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    public const ROLE_ADMIN = 'ADMIN';
+    public const ROLE_USER = 'USER';
+    public const ROLE_DELIVERY = 'DELIVERY';
+
+    const ROLES = [
+        self::ROLE_ADMIN => 'Admin',
+        self::ROLE_USER => 'User',
+        self::ROLE_DELIVERY => 'Delivery',
+    ];
+
     protected $fillable = [
         'name',
         'email',
