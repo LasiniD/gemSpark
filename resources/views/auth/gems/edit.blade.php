@@ -8,7 +8,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('gems.index') }}">Gems</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Create gems</li>
+                        <li class="breadcrumb-item active" aria-current="page">Update gems</li>
                     </ol>
                 </nav>
             </div>

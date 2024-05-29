@@ -63,8 +63,6 @@
                                                 <td> {{ $gem->is_available == 1 ? 'In Stock' : 'Out Of Stock' }} </td>
                                                 <td>
 
-                                                    {{--edit the routes in these buttons ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--}}
-
                                                     <a href="{{ route('gems.show',$gem->slug) }}" class="btn btn-sm btn-success"> <i class="fas fa-eye"></i> </a>
                                                     <a href="{{ route('gems.edit',['gem' => $gem->slug]) }}" class="btn btn-sm btn-info"> <i class="fas fa-edit"></i> </a>
                                                     <form method="POST" action="{{ route('gems.destroy', [$gem->slug]) }}">
