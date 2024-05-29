@@ -17,35 +17,25 @@
     <div class="page-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 flex-wrapper">
 
                     @foreach($gems as $gem)
                         <div class="post">
                             <div class="post-media post-thumb">
-                                <a href="blog-single.html">
-                                    <img src="{{ $gem->image }}" alt="">
-                                </a>
+                                <div class="hover-with">
+                                    <a href="single.blade.php">
+                                        {{--<img src="{{ $gem->image }}" alt="">--}}
+                                        <img src="{{ asset("assets/mainLayout/images/blog/blog-post-1.jpg") }}" alt="" class="w-25 h-48">
+                                    </a>
+                                </div>
+                                <div class="hide"><a> Add to cart </a><a>VIEW</a></div>
                             </div>
                             <h3 class="post-title"><a href="blog-single.html">{{ $gem->name }}</a></h3>
-                            <div class="post-meta">
-                                <ul>
-                                    <li>
-                                        CARAT WEIGHT {{ $gem->carat_weight }}
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-diamond"></i> {{ $gem->where_from }}
-                                    </li>
-                                    <li>
-                                        Rs {{ $gem->price }} /=
-                                    </li>
-
-                                </ul>
-                            </div>
                             <div class="post-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit vitae placeat ad architecto nostrum asperiores vel aperiam, veniam eum nulla. Maxime cum magnam, adipisci architecto quibusdam cumque veniam fugiat quae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio vitae ab doloremque accusamus sit, eos dolorum officiis a perspiciatis aliquid. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, facere. </p>
-                                <a href="blog-single.html" class="btn btn-main">Continue Reading</a>
+                                <p>CARAT WEIGHT {{ $gem->carat_weight }}</p>
+                                <p><i class="fa fa-diamond"></i> {{ $gem->where_from }}</p>
+                                <p>Rs {{ $gem->price }} /=</p>
                             </div>
-
                         </div>
                     @endforeach
 
@@ -176,6 +166,7 @@
                             <a href="blog-single.html" class="btn btn-main">Continue Reading</a>
                         </div>
                     </div>--}}
+
                     <div class="text-center">
                         <ul class="pagination post-pagination">
                             <li><a href="#">Prev</a>
