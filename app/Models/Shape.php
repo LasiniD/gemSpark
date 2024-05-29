@@ -13,4 +13,9 @@ class Shape extends Model
         'name',
         'slug'
     ];
+
+    public function gems()
+    {
+        return $this->hasMany(Gem::class);
+    }
 }

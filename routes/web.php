@@ -31,4 +31,7 @@ Route::resource('auth/colours', \App\Http\Controllers\Auth\ColourController::cla
 Route::resource('auth/shapes', \App\Http\Controllers\Auth\ShapeController::class)->middleware('auth');
 Route::resource('auth/types', \App\Http\Controllers\Auth\TypeController::class)->middleware('auth');
 
-/*Route::patch('auth/gems/{gem}/edit', [\App\Http\Controllers\Auth\GemController::class, 'edit'])->middleware('auth');*/
+Route::get('/gems/{gem}', [\App\Http\Controllers\Auth\HomeController::class, 'show'])->name('home.show');
+Route::get('/type/{type}', [\App\Http\Controllers\Auth\HomeTypeController::class, 'show'])->name('homeType.show');
+Route::get('/colour/{colour}', [\App\Http\Controllers\Auth\HomeColourController::class, 'show'])->name('homeColour.show');
+Route::get('/shape/{shape}', [\App\Http\Controllers\Auth\HomeShapeController::class, 'show'])->name('homeShape.show');
