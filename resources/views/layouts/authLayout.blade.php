@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="{{ asset('assets/auth/css/style.css') }}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('assets/auth/images/favicon.png') }}" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
 <div class="container-scroller">
@@ -193,57 +198,83 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="{{ route('auth.dashboard') }}">
                         <span class="menu-title">Dashboard</span>
                         <i class="mdi mdi-home menu-icon"></i>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                        <span class="menu-title">Basic UI Elements</span>
+                        <span class="menu-title">Gems</span>
                         <i class="menu-arrow"></i>
                         <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                     </a>
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
+                                <a class="nav-link" href="{{ route('gems.index') }}">Gems</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
+                                <a class="nav-link" href="{{ route('gems.create') }}">Create Gems</a>
                             </li>
                         </ul>
                     </div>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-                        <span class="menu-title">Icons</span>
-                        <i class="mdi mdi-contacts menu-icon"></i>
+                    <a class="nav-link" data-bs-toggle="collapse" href="#ui-types" aria-expanded="false" aria-controls="ui-types">
+                        <span class="menu-title">Gem Types</span>
+                        <i class="menu-arrow"></i>
+                        <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                     </a>
-                    <div class="collapse" id="icons">
+                    <div class="collapse" id="ui-types">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/icons/font-awesome.html">Font Awesome</a>
+                                <a class="nav-link" href="{{ route('types.index') }}">Types</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('types.create') }}">Create Types</a>
                             </li>
                         </ul>
                     </div>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#forms" aria-expanded="false" aria-controls="forms">
-                        <span class="menu-title">Forms</span>
-                        <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                    <a class="nav-link" data-bs-toggle="collapse" href="#ui-colours" aria-expanded="false" aria-controls="ui-colours">
+                        <span class="menu-title">Gem Colours</span>
+                        <i class="menu-arrow"></i>
+                        <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                     </a>
-                    <div class="collapse" id="forms">
+                    <div class="collapse" id="ui-colours">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/forms/basic_elements.html">Form Elements</a>
+                                <a class="nav-link" href="{{ route('colours.index') }}">Colours</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('colours.create') }}">Create Colours</a>
                             </li>
                         </ul>
                     </div>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#ui-shapes" aria-expanded="false" aria-controls="ui-shapes">
+                        <span class="menu-title">Gem Shapes</span>
+                        <i class="menu-arrow"></i>
+                        <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                    </a>
+                    <div class="collapse" id="ui-shapes">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('shapes.index') }}">Shapes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('shapes.create') }}">Create Shapes</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
                         <span class="menu-title">Charts</span>
@@ -310,6 +341,19 @@
 @yield('contentAuth')
 
 
+        <script>
+            @if(Session::has('success'))
+            swal("Good job!", "{{ Session::get('success') }}", "success");
+            @endif
+            @if(Session::has('update'))
+            swal("Good job!", "{{ Session::get('update') }}", "info");
+            @endif
+            @if(Session::has('danger'))
+            swal("Good job!", "{{ Session::get('danger') }}", "error");
+            @endif
+        </script>
+
+
     <!-- partial:partials/_footer.html -->
     <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -323,8 +367,12 @@
 <!-- main-panel ends -->
 </div>
 </div>
+
 <!-- container-scroller -->
 <!-- plugins:js -->
+
+@yield('scripts')
+
 <script src="{{ asset('assets/auth/vendors/js/vendor.bundle.base.js') }}"></script>
 <!-- endinject -->
 <!-- Plugin js for this page -->
@@ -341,6 +389,8 @@
 <!-- Custom js for this page -->
 <script src="{{ asset('assets/auth/js/dashboard.js') }}"></script>
 <!-- End custom js for this page -->
+
+
 </body>
 </html>
 

@@ -1,11 +1,11 @@
 <?php
 
+use App\Http\Controllers\Auth\GemController;
+use App\Http\Controllers\Auth\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('pages.home');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/single', function () {
     return view('pages.single');
@@ -27,3 +27,8 @@ Route::get('auth/dashboard', [\App\Http\Controllers\Auth\DashboardController::cl
 /*Route::get('auth/gems', [\App\Http\Controllers\GemController::class, 'index'])->name('gems.index');*/
 
 Route::resource('auth/gems', \App\Http\Controllers\Auth\GemController::class)->middleware('auth');
+Route::resource('auth/colours', \App\Http\Controllers\Auth\ColourController::class)->middleware('auth');
+Route::resource('auth/shapes', \App\Http\Controllers\Auth\ShapeController::class)->middleware('auth');
+Route::resource('auth/types', \App\Http\Controllers\Auth\TypeController::class)->middleware('auth');
+
+/*Route::patch('auth/gems/{gem}/edit', [\App\Http\Controllers\Auth\GemController::class, 'edit'])->middleware('auth');*/
