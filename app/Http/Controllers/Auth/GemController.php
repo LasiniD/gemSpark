@@ -40,7 +40,7 @@ class GemController extends Controller
         if ($file = $request->has('file')) {
             $file = $request->file('file');
             $fileName = time().$file->getClientOriginalName();
-            $imagePath = public_path().'/images/gems';
+            $imagePath = '/images/gems';
         }
         Gem::create([
             'name' => $request->name,
@@ -67,7 +67,11 @@ class GemController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $gems = Gem::with(['type', 'colour', 'shape'])->where('slug', $id)->first();
+        $types = Type::where('id', $gems->type_id)->first();
+        $colours = Colour::where('id', $gems->colour_id)->first();
+        $shapes = Shape::where('id', $gems->shape_id)->first();
+        return view('auth.gems.view', ['gems' => $gems,'types' => $types, 'colours' => $colours, 'shapes' => $shapes]);
     }
 
     /**
@@ -75,7 +79,17 @@ class GemController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $gems = Gem::with(['type', 'colour', 'shape'])->where('slug', $id)->first();
+
+        $type = Type::where('id', $gems->type_id)->first();
+        $colour = Colour::where('id', $gems->colour_id)->first();
+        $shape = Shape::where('id', $gems->shape_id)->first();
+
+        $types = Type::all();
+        $colours = Colour::all();
+        $shapes = Shape::all();
+
+        return view('auth.gems.edit', ['gems' => $gems,'types' => $types, 'colours' => $colours, 'shapes' => $shapes, 'type' => $type, 'colour' => $colour, 'shape' => $shape]);
     }
 
     /**
@@ -83,7 +97,10 @@ class GemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $gems = Gem::where('slug', $id)->first();
+        $input = $request->all();
+        $gems->update($input);
+        return redirect()->route('gems.index')->with('success', 'Gem updated successfully');
     }
 
     /**

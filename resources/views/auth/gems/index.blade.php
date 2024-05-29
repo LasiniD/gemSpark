@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body overflow-x-auto">
                                 @if(count($gems)>0)
                                 <h4 class="card-title">Gems</h4>
                                 <p class="card-description"> All gems <code>.table-striped</code>
@@ -65,8 +65,8 @@
 
                                                     {{--edit the routes in these buttons ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--}}
 
-                                                    <a href="{{ route('gems.create',$gem->id) }}" class="btn btn-sm btn-success"> <i class="fas fa-eye"></i> </a>
-                                                    <a href="" class="btn btn-sm btn-info"> <i class="fas fa-edit"></i> </a>
+                                                    <a href="{{ route('gems.show',$gem->slug) }}" class="btn btn-sm btn-success"> <i class="fas fa-eye"></i> </a>
+                                                    <a href="{{ route('gems.edit',['gem' => $gem->slug]) }}" class="btn btn-sm btn-info"> <i class="fas fa-edit"></i> </a>
                                                     <a href="" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </a>
                                                 </td>
                                             </tr>
