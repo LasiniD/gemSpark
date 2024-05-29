@@ -27,4 +27,5 @@ Route::get('auth/dashboard', [\App\Http\Controllers\Auth\DashboardController::cl
 /*Route::get('auth/gems', [\App\Http\Controllers\GemController::class, 'index'])->name('gems.index');*/
 
 Route::resource('auth/gems', \App\Http\Controllers\Auth\GemController::class)->middleware('auth');
+
 /*Route::patch('auth/gems/{gem}/edit', [\App\Http\Controllers\Auth\GemController::class, 'edit'])->middleware('auth');*/

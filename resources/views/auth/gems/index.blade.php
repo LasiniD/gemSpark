@@ -67,7 +67,12 @@
 
                                                     <a href="{{ route('gems.show',$gem->slug) }}" class="btn btn-sm btn-success"> <i class="fas fa-eye"></i> </a>
                                                     <a href="{{ route('gems.edit',['gem' => $gem->slug]) }}" class="btn btn-sm btn-info"> <i class="fas fa-edit"></i> </a>
-                                                    <a href="" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </a>
+                                                    <form method="POST" action="{{ route('gems.destroy', [$gem->slug]) }}">
+                                                        {{ method_field('DELETE') }}
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Confirm delete?')"> <i class="fas fa-trash"></i> </button>
+                                                    </form>
+
                                                 </td>
                                             </tr>
                                         @endforeach

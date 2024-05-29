@@ -108,6 +108,8 @@ class GemController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $gems = Gem::where('slug', $id)->first();
+        $gems->delete();
+        return redirect()->route('gems.index')->with('danger', 'Gem deleted!');
     }
 }
