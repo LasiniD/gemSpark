@@ -32,7 +32,7 @@
             <p>Rs {{ $gem->price }} /=</p>
         </div>
         <div>
-            <button href="{{ route('home.show',$gem->slug) }}"> Buy Now </button>
+            @livewire('product-add-to-cart', ['gem' => $gem])
         </div>
     </div>
 @endif

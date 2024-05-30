@@ -103,6 +103,16 @@
                                         @endif
                                     </ul>
                                 </li>
+
+                                {{--<li><a href=""><i id="showCart" class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>--}}
+                                <li>
+                                    <a href="" class="cart-icon">
+                                        <i id="showCart" class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+
+                                @livewire("cart-status")
+
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->

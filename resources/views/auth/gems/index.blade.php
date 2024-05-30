@@ -43,7 +43,7 @@
 
                                                     {{--images are not showing ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--}}
 
-                                                    <img src="{{ $gem->image }}" alt="image" />
+                                                    <img src="{{ $gem->getFirstMediaUrl('images') }}" alt="image" />
                                                     {{--<img src="{{ asset('images/gems').'/'.$gem->image }}" alt="image" />--}}
                                                 </td>
                                                 <td> {{ $gem->name }} </td>

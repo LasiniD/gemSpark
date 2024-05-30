@@ -123,3 +123,11 @@
         </div>
     </div>
 @endsection
+
+        {{--<script>
+            $('#exampleSlug1').on('keyup', function(){
+                // set the #name-text textContent as the #name-input field value
+                $('#exampleInputName1').text($(this).val());
+            });
+            // on every name field key stroke
+        </script>--}}
