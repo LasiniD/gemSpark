@@ -1885,12 +1885,28 @@ font header .navbar-default .navbar-nav li a:hover {
 /*=================================================================
   Single Blog Page
 ==================================================================*/
-.post.post-single {
-  border: none;
+
+
+.post-single-container{
+    display: grid;
+    grid-auto-columns: 50% 50%;
 }
 
-.post.post-single .post-thumb {
-  margin-top: 30px;
+.post-thumb {
+    display: flex;
+    grid-area: 1 / 1 / 2 / 2;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-single-image{
+    height: auto;
+    width: 300px;
+}
+
+.post-single-data{
+    align-content: space-around;
+    grid-area: 1 / 2 / 2 / 3;
 }
 
 .post-sub-heading {
@@ -2193,6 +2209,22 @@ font header .navbar-default .navbar-nav li a:hover {
   background: #F6F6F6;
 }
 
+.add-to-cart-container{
+    margin-left: 0;
+}
+
+.add-to-cart{
+    width: 70%;
+    padding: 10px 20px;
+    background: #655E7A;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
 .flex-wrapper{
     display:flex;
     flex-wrap: wrap;
@@ -2247,6 +2279,14 @@ font header .navbar-default .navbar-nav li a:hover {
 .post .post-meta {
   font-size: 13px;
   margin-top: 10px;
+}
+
+.post-meta-single ul li {
+    display: inline-block;
+    color: #909090;
+    margin-right: 20px;
+    font-size: 12px;
+    letter-spacing: .5px;
 }
 
 .post .post-meta ul li {
@@ -2521,6 +2561,17 @@ font header .navbar-default .navbar-nav li a:hover {
 
 .shopping.cart .product-list .table > tbody > tr > td {
   vertical-align: middle;
+}
+
+.my-cart{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    background: #383838;
+    color: #fff;
+    border-radius: 50%;
 }
 
 .shopping.cart .product-list .product-info a {

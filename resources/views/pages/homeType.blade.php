@@ -7,7 +7,7 @@
                 <div class="col-md-12">
                     <div class="block">
                         <h1>Gem Spark</h1>
-                        <p>Buy exquisite gems for reasonable price.</p>
+                        <h2>Types</h2>
                     </div>
                 </div>
             </div>

@@ -66,27 +66,18 @@
                                         <li><a href="{{ route('auth.dashboard') }}">ADMIN</a></li>
                                     @endif
                                 @endif
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <span class="ion-ios-arrow-down"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="blog-grid.html">Blog Grid</a></li>
-                                        <li><a href="/single">Blog Single</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                        <li><a href="blog-full-width.html">Blog Full Width</a></li>
-                                    </ul>
+                                <li>
+                                    <a href="#">Blog</a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="ion-ios-arrow-down"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="about.html">About Us</a></li>
-                                        <li><a href="coming-soon.html">Coming Soon</a></li>
-                                        <li><a href="404.html">404 Page</a></li>
+                                        <li><a href="coming-soon.html">Contact Us</a></li>
                                         <li><a href="faq.html">FAQ</a></li>
-                                        <li><a href="pricing.html">Pricing Table</a></li>
+                                        {{--<li><a href="pricing.html">Pricing Table</a></li>--}}
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="ion-ios-arrow-down"></span></a>
                                     <ul class="dropdown-menu">
@@ -104,14 +95,7 @@
                                     </ul>
                                 </li>
 
-                                {{--<li><a href=""><i id="showCart" class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>--}}
-                                <li>
-                                    <a href="" class="cart-icon">
-                                        <i id="showCart" class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-
-                                @livewire("cart-status")
+                                <li>@livewire("cart-status")</li>
 
                             </ul>
                         </div><!-- /.navbar-collapse -->

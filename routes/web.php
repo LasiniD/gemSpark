@@ -7,10 +7,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/single', function () {
-    return view('pages.single');
-});
-
 Route::get('/admin', function () {
     return view('auth.dashboard');
 });
@@ -35,3 +31,4 @@ Route::get('/gems/{gem}', [\App\Http\Controllers\Auth\HomeController::class, 'sh
 Route::get('/type/{type}', [\App\Http\Controllers\Auth\HomeTypeController::class, 'show'])->name('homeType.show');
 Route::get('/colour/{colour}', [\App\Http\Controllers\Auth\HomeColourController::class, 'show'])->name('homeColour.show');
 Route::get('/shape/{shape}', [\App\Http\Controllers\Auth\HomeShapeController::class, 'show'])->name('homeShape.show');
+

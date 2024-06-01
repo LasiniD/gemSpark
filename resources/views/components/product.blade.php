@@ -5,9 +5,8 @@
     <div class="post">
         <div class="post-media post-thumb">
             <div class="hover-with">
-                <a {{--href="{{ route('home.show',$gem->slug) }}"--}}>
-                    {{--<img src="{{ $gem->image }}" alt="">--}}
-                    <img src="{{ asset("assets/mainLayout/images/blog/blog-post-1.jpg") }}" alt="" class="w-25 h-48">
+                <a href="{{ route('home.show',$gem->slug) }}">
+                    <img src="{{ $gem->getFirstMediaUrl('images') }}" alt="" class="w-25 h-48">
                 </a>
             </div>
             {{--<div class="hide"><a> Add to cart </a><a>VIEW</a></div>--}}
