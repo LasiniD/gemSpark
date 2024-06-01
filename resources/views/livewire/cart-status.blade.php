@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Cart;
 use function Livewire\Volt\{state, mount, on};
 
 state([
@@ -25,9 +26,7 @@ mount(function () {
 $removeProduct = function ($gemId) {
     $cart = $this->cart;
 
-    $cart->gem()->detach($gemId);
-
-    $cart->save();
+    $cart = Cart::removeGem($gemId);
 
     $this->cart = $cart;
 };
@@ -49,7 +48,8 @@ on(['cartRefresh' => function () {
 
 <div>
     <div class="relative" x-data="{ open: @entangle('showCart') }">
-        <button @click="open = !open" {{--class="flex items-center justify-center w-10 h-10 bg-gray-800 text-white rounded-full"--}} >
+        <button
+            @click="open = !open" {{--class="flex items-center justify-center w-10 h-10 bg-gray-800 text-white rounded-full"--}} >
             {{--<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                  stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -67,11 +67,13 @@ on(['cartRefresh' => function () {
                     <div class="items center space-y-6">
                         @if(isset($cart))
                             <div class="flex items center">
-                                <img src="{{ $cart->gem->getFirstMediaUrl('images') }}" width="100px" height="100px" class="w-10 h-10 object-cover rounded">
+                                <img src="{{ $cart->gem->getFirstMediaUrl('images') }}" width="100px" height="100px"
+                                     class="w-10 h-10 object-cover rounded">
                                 <div class="ml-4">
                                     <h4 class="text-sm font-medium text-gray-900">{{ $cart->gem->name }}</h4>
                                 </div>
-                                <button wire:click="removeProduct({{ $cart->gem->id }})" class="ml-auto text-gray-500 hover:text-gray-600">
+                                <button wire:click="removeProduct({{ $cart->gem->id }})"
+                                        class="ml-auto text-gray-500 hover:text-gray-600">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </div>

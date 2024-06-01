@@ -30,12 +30,12 @@ class Cart extends Model
     {
         return $this
             ->belongsTo(Gem::class);
-            /*->using(CartProduct::class)
-            ->withPivot([
-                'quantity',
-                'tax',
-                'discount',
-                'price',
-            ]);*/
+    }
+
+    //create a function to remove the gem from the cart
+    public static function removeGem($gemId): void
+    {
+        $cart = Cart::where('gem_id', $gemId)->first();
+        $cart->delete();
     }
 }
