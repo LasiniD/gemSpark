@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/colour', [\App\Http\Controllers\Auth\HomeColourController::class, 'index'])->name('colour');
+Route::get('/shape', [\App\Http\Controllers\Auth\HomeShapeController::class, 'index'])->name('shape');
+Route::get('/type', [\App\Http\Controllers\Auth\HomeTypeController::class, 'index'])->name('type');
+
 
 Route::get('/admin', function () {
     return view('auth.dashboard');
@@ -32,3 +36,4 @@ Route::get('/type/{type}', [\App\Http\Controllers\Auth\HomeTypeController::class
 Route::get('/colour/{colour}', [\App\Http\Controllers\Auth\HomeColourController::class, 'show'])->name('homeColour.show');
 Route::get('/shape/{shape}', [\App\Http\Controllers\Auth\HomeShapeController::class, 'show'])->name('homeShape.show');
 
+Route::get('/cart/{id}', [\App\Http\Controllers\Auth\CartController::class, 'index'])->name('cart');

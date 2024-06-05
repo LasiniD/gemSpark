@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\View\View;
 
 class Cart extends Model
 {
@@ -38,4 +39,5 @@ class Cart extends Model
         $cart = Cart::where('gem_id', $gemId)->first();
         $cart->delete();
     }
+
 }

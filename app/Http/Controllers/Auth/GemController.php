@@ -37,14 +37,6 @@ class GemController extends Controller
      */
     public function store(CreateRequest $request)
     {
-
-//        if ($file = $request->has('file')) {
-//            $file = $request->file('file');
-//            $fileName = time().$file->getClientOriginalName();
-//            $imagePath = '/images/gems';
-//        }
-
-
        $gem =  Gem::create([
             'name' => $request->name,
             'image' => '/',
