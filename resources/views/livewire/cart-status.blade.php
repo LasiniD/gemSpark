@@ -28,6 +28,8 @@ $removeProduct = function ($gemId) {
     $cart = Cart::removeGem($gemId);
 
     $this->cart = $cart;
+
+    return redirect()->route('home');
 };
 
 on(['cartRefresh' => function () {
