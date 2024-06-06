@@ -17,7 +17,7 @@
     <div class="page-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 flex-wrapper">
+                <div class="col-md-9 flex-wrapper">
 
                     @foreach($colour as $category)
                         <a href="{{ route('homeColour.show',$category->slug) }}">

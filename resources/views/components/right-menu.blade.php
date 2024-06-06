@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<div class="col-md-3">
     <aside class="sidebar">
 
         <!-- Widget Category -->

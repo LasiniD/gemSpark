@@ -19,14 +19,13 @@
                             </thead>
                             <tbody>
                                     <tr>
-                                        {{--<td>{{ $cart->$gem->name }}</td>
-                                        <td>{{ $cart->$gem->price }}</td>
-                                        <td>{{ $cart->quantity }}</td>
-                                        <td>{{ $cart->total }}</td>--}}
-                                        <td>Product</td>
-                                        <td>Price</td>
-                                        <td>Quantity</td>
-                                        <td>Total</td>
+                                        {{ dd($cart) }}
+                                        @foreach($cart->items as $item)
+                                            {{--<td>{{ $item->gem->name }}</td>
+                                            <td>{{ $item->gem->total }}</td>
+                                            <td>{{ $item->quantity }}</td>
+                                            <td>{{ $item->total }}</td>--}}
+                                        @endforeach
                                     </tr>
                             </tbody>
                         </table>

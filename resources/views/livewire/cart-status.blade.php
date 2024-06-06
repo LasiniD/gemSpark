@@ -78,7 +78,7 @@ on(['cartRefresh' => function () {
                                 Sub total : LKR {{ number_format($cart->total, 2) }}
                             </p>
                             {{--<button class="view-cart" href="">View Cart</button>--}}
-                        <a {{--wire:click.prevent="handleClick"--}} href="{{ route('cart',[$cart->id]) }}">
+                        <a {{--wire:click.prevent="handleClick"--}} href="{{ route('cart',[$cart]) }}">
                             <button class="view-cart">View Cart</button>
                         </a>
                             <br>

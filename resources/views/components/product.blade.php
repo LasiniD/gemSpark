@@ -24,11 +24,12 @@
                     <a href="{{ route('homeColour.show',$gem->colour->slug) }}"><i class=""></i>{{ $gem->colour->name }}</a>
                 </li>
             </ul>
-        </div>
-        <div class="post-content">
-            <p>CARAT WEIGHT {{ $gem->carat_weight }}</p>
-            <p><i class="fa fa-diamond"></i> {{ $gem->where_from }}</p>
-            <p>Rs {{ $gem->price }} /=</p>
+            <ul>
+                <li class="small-label">Carat Weight {{ $gem->carat_weight }}</li>
+                <li class="small-label">{{ $gem->where_from }}</li>
+            </ul>
+            <br>
+            <p>LKR {{ number_format($gem->price, 2) }}</p>
         </div>
         <div>
             @livewire('product-add-to-cart', ['gem' => $gem])

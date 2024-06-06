@@ -7,9 +7,8 @@ use App\Models\Cart;
 
 class CartController extends Controller
 {
-    public function index($cartID)
+    public function index($cart)
     {
-        $cart = Cart::where('id', $cartID)->get();
         return view('pages.cart', ['cart' => $cart]);
     }
 }

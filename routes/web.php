@@ -22,14 +22,15 @@ Route::get('/logout', function () {
 
 Auth::routes();
 
-Route::get('auth/dashboard', [\App\Http\Controllers\Auth\DashboardController::class, 'index'])->name('auth.dashboard')->middleware('auth');
+/*Route::get('/auth', function () {
+    // ...
+})->middleware(EnsureTokenIsValid::class);*/
 
-/*Route::get('auth/gems', [\App\Http\Controllers\GemController::class, 'index'])->name('gems.index');*/
-
-Route::resource('auth/gems', \App\Http\Controllers\Auth\GemController::class)->middleware('auth');
-Route::resource('auth/colours', \App\Http\Controllers\Auth\ColourController::class)->middleware('auth');
-Route::resource('auth/shapes', \App\Http\Controllers\Auth\ShapeController::class)->middleware('auth');
-Route::resource('auth/types', \App\Http\Controllers\Auth\TypeController::class)->middleware('auth');
+Route::get('auth/dashboard', [\App\Http\Controllers\Auth\DashboardController::class, 'index'])->name('auth.dashboard');
+Route::resource('auth/gems', \App\Http\Controllers\Auth\GemController::class);
+Route::resource('auth/colours', \App\Http\Controllers\Auth\ColourController::class);
+Route::resource('auth/shapes', \App\Http\Controllers\Auth\ShapeController::class);
+Route::resource('auth/types', \App\Http\Controllers\Auth\TypeController::class);
 
 Route::get('/gems/{gem}', [\App\Http\Controllers\Auth\HomeController::class, 'show'])->name('home.show');
 Route::get('/type/{type}', [\App\Http\Controllers\Auth\HomeTypeController::class, 'show'])->name('homeType.show');
@@ -37,3 +38,5 @@ Route::get('/colour/{colour}', [\App\Http\Controllers\Auth\HomeColourController:
 Route::get('/shape/{shape}', [\App\Http\Controllers\Auth\HomeShapeController::class, 'show'])->name('homeShape.show');
 
 Route::get('/cart/{id}', [\App\Http\Controllers\Auth\CartController::class, 'index'])->name('cart');
+
+/*Route::post('/gems/{gem}/reviews',\App\Livewire\Reviews::class)->name('review.store');*/

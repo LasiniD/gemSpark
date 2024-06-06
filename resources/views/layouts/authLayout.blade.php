@@ -28,6 +28,12 @@
 
 </head>
 <body>
+
+@if(auth()->guest() || auth()->user()->role == 'USER')
+    <script>
+        window.location = "/login";
+    </script>
+    @elseif(auth()->user()->role == 'ADMIN')
 <div class="container-scroller">
 
     <!-- partial:partials/_navbar.html -->
@@ -315,6 +321,9 @@
 <!-- main-panel ends -->
 </div>
 </div>
+
+
+@endif
 
 <!-- container-scroller -->
 <!-- plugins:js -->

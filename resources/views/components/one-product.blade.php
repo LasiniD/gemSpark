@@ -27,12 +27,14 @@
             <div class="post-content">
                 <h3>FROM {{ $gem->where_from }}</h3>
                 <p>CARAT WEIGHT : {{ $gem->carat_weight }}</p>
-                <h3>Rs. {{ $gem->price }} /=</h3>
+                <h3>LKR {{ number_format($gem->price, 2) }}</h3>
             </div>
             <br>
             <div>
                 @livewire('product-add-to-cart', ['gem' => $gem])
             </div>
+
         </div>
+        <livewire:reviews></livewire:reviews>
     </div>
 @endif

@@ -29,6 +29,8 @@ $addToCart = function () {
             'user_id' => auth()->id(),
             'is_paid' => false,
             'gem_id' => $this->gem->id
+            /*'item_count' => 1,*/
+            /*'total' => $this->gem->price*/
         ]);
     }
 
