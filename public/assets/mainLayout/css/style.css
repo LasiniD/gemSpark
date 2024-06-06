@@ -24,6 +24,178 @@ h2 {
   font-size: 28px;
 }
 
+/*
+bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300
+*/
+.h2-badge{
+    background-color: rgb(76, 25, 142,0.3);
+    color: #b261fd;
+    font-size: 56px;
+    font-family: serif;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.p-badge{
+    background-color: rgb(255, 255, 255,0.2);
+    color: #ffffff;
+    font-size: 20px;
+    font-family: serif;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/*bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300*/
+.badge-main{
+    background-color: rgb(76, 25, 142,0.3);
+    color: #b261fd;
+    font-size: 20px;
+    font-family: serif;
+    font-weight: 500;
+    padding: 20px 35px;
+    border-radius: 5px;
+}
+
+.small-label{
+    background-color: rgb(223, 222, 222);
+    font-size: 12px;
+    font-weight: 400;
+    padding: 3px 6px;
+    margin: 1px 2px 1px 1px;
+    border-radius: 5px;
+}
+
+.review-box{
+    font-weight: 400;
+    padding: 20px 10px 0px 20px;
+    margin: 0px;
+}
+
+/*form-group row*/
+.form-group-row{
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*mt-3 text-right*/
+.submit-button{
+    padding: 10px 10px 12px;
+    text-align: right;
+}
+
+/*button styles:btn btn success checkout-live-button*/
+.checkout-button{
+    background-color: #87bd5b;
+    color: #000000;
+    font-size: 15px;
+    font-family: serif;
+    font-weight: 400;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    display: none;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rated:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+.star-rating-complete{
+    color: #c59b08;
+}
+.rating-container .form-control:hover, .rating-container .form-control:focus{
+    background: #fff;
+    border: 1px solid #ced4da;
+}
+.rating-container textarea:focus, .rating-container input:focus {
+    color: #000;
+}
+.rated {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rated:not(:checked) > input {
+    position:absolute;
+    display: none;
+}
+.rated:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ffc700;
+}
+.rated:not(:checked) > label:before {
+    content: '★ ';
+}
+.rated > input:checked ~ label {
+    color: #ffc700;
+}
+.rated:not(:checked) > label:hover,
+.rated:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rated > input:checked + label:hover,
+.rated > input:checked + label:hover ~ label,
+.rated > input:checked ~ label:hover,
+.rated > input:checked ~ label:hover ~ label,
+.rated > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.main-topic{
+    font-size: 56px;
+}
+
+.font-serif{
+    font-family: serif;
+}
+
 h3 {
   font-size: 20px;
 }
@@ -1885,12 +2057,36 @@ font header .navbar-default .navbar-nav li a:hover {
 /*=================================================================
   Single Blog Page
 ==================================================================*/
-.post.post-single {
-  border: none;
+
+
+.post-single-container{
+    display: grid;
+    grid-auto-columns: 50% 50%;
 }
 
-.post.post-single .post-thumb {
-  margin-top: 30px;
+.post-thumb {
+    display: flex;
+    grid-area: 1 / 1 / 2 / 2;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-single-image{
+    height: auto;
+    width: 300px;
+}
+
+.post-review{
+    grid-area: 2 / 1 / 3 / 3;
+}
+
+.post-review-comments{
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+.post-single-data{
+    align-content: space-around;
+    grid-area: 1 / 2 / 2 / 3;
 }
 
 .post-sub-heading {
@@ -2193,6 +2389,63 @@ font header .navbar-default .navbar-nav li a:hover {
   background: #F6F6F6;
 }
 
+/*
+absolute right-0 w-80 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none
+*/
+.cart-design{
+    position: absolute;
+    right: 0;
+    width: max-content;
+    max-width: 300px;
+    padding: 20px;
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+    z-index: 999;
+}
+
+.add-to-cart-container{
+    margin-left: 0;
+}
+
+.add-to-cart{
+    width: 70%;
+    padding: 10px 20px;
+    background: #655E7A;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.view-cart{
+    width: 100%;
+    padding: 5px 20px;
+    background: #d6ba69;
+    color: #000000;
+    font-weight: 400;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.check-out{
+    width: 100%;
+    padding: 5px 20px;
+    background: #87bd5b;
+    color: #000000;
+    font-weight: 400;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
 .flex-wrapper{
     display:flex;
     flex-wrap: wrap;
@@ -2247,6 +2500,14 @@ font header .navbar-default .navbar-nav li a:hover {
 .post .post-meta {
   font-size: 13px;
   margin-top: 10px;
+}
+
+.post-meta-single ul li {
+    display: inline-block;
+    color: #909090;
+    margin-right: 20px;
+    font-size: 12px;
+    letter-spacing: .5px;
 }
 
 .post .post-meta ul li {
@@ -2521,6 +2782,43 @@ font header .navbar-default .navbar-nav li a:hover {
 
 .shopping.cart .product-list .table > tbody > tr > td {
   vertical-align: middle;
+}
+
+.my-cart{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    background: #383838;
+    color: #fff;
+    border-radius: 50%;
+}
+
+/*container mx-auto*/
+.cart-table-div{
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*table w-full*/
+.cart-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/*text-left font-medium bg-gray-100*/
+.cart-table th{
+    text-align: left;
+    font-weight: 500;
+    background: #f9f9f9;
+    padding: 10px;
+    text-transform: uppercase;
 }
 
 .shopping.cart .product-list .product-info a {

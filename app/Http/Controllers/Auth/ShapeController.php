@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\Gems\CreateRequest;
+use App\Http\Requests\Shapes\ShapeCreateRequest;
 use App\Models\Shape;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,7 @@ class ShapeController extends Controller
         return view('auth.shapes.create');
     }
 
-    public function store(CreateRequest $request)
+    public function store(ShapeCreateRequest $request)
     {
         Shape::create([
             'name' => $request->name,

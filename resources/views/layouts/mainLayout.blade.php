@@ -37,7 +37,6 @@
 </head>
 
 <body id="body">
-
 <!-- Header Start -->
 <header class="navigation">
     <div class="container">
@@ -55,42 +54,49 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <a class="navbar-brand" href="/">
-                                <img src="{{ asset('assets/mainLayout/images/logo.png') }}" alt="Logo">
+                                <img src="{{ asset('assets/mainLayout/images/logo.png') }}" alt="Logo" width="280px">
                             </a>
                         </div>
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="/">Home</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="ion-ios-arrow-down"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="portfolio.html">Login</a></li>
-                                        <li><a href="portfolio-single.html">Register</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="service.html">Service</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <span class="ion-ios-arrow-down"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="blog-grid.html">Blog Grid</a></li>
-                                        <li><a href="/single">Blog Single</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                        <li><a href="blog-full-width.html">Blog Full Width</a></li>
-                                    </ul>
+                                @if(Auth::user())
+                                    @if(Auth::user()->role == 'ADMIN')
+                                        <li><a href="{{ route('auth.dashboard') }}">ADMIN</a></li>
+                                    @endif
+                                @endif
+                                <li>
+                                    <a href="{{ route('blog') }}">Blog</a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="ion-ios-arrow-down"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="about.html">About Us</a></li>
-                                        <li><a href="coming-soon.html">Coming Soon</a></li>
-                                        <li><a href="404.html">404 Page</a></li>
+                                        <li><a href="coming-soon.html">Contact Us</a></li>
                                         <li><a href="faq.html">FAQ</a></li>
-                                        <li><a href="pricing.html">Pricing Table</a></li>
+                                        {{--<li><a href="pricing.html">Pricing Table</a></li>--}}
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="ion-ios-arrow-down"></span></a>
+                                    <ul class="dropdown-menu">
+                                        @guest
+                                            <li><a href="{{ route('login') }}">Log in</a></li>
+
+                                            @if (Route::has('register'))
+                                                <li><a href="{{ route('register') }}">Register</a></li>
+                                            @endif
+                                        @endguest
+                                        @if(Auth::user())
+                                            <li><a>Profile</a></li>
+                                            <li><a href="{{ route('logout') }}">Logout</a></li>
+                                        @endif
+                                    </ul>
+                                </li>
+
+                                <li>@livewire("cart-status")</li>
+
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->

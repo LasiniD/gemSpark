@@ -43,7 +43,7 @@
 
                                                     {{--images are not showing ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--}}
 
-                                                    <img src="{{ $gem->image }}" alt="image" />
+                                                    <img src="{{ $gem->getFirstMediaUrl('images') }}" alt="image" />
                                                     {{--<img src="{{ asset('images/gems').'/'.$gem->image }}" alt="image" />--}}
                                                 </td>
                                                 <td> {{ $gem->name }} </td>
@@ -63,7 +63,6 @@
                                                 <td> {{ $gem->is_available == 1 ? 'In Stock' : 'Out Of Stock' }} </td>
                                                 <td>
 
-                                                    <a href="{{ route('gems.show',$gem->slug) }}" class="btn btn-sm btn-success"> <i class="fas fa-eye"></i> </a>
                                                     <a href="{{ route('gems.edit',['gem' => $gem->slug]) }}" class="btn btn-sm btn-info"> <i class="fas fa-edit"></i> </a>
                                                     <form method="POST" action="{{ route('gems.destroy', [$gem->slug]) }}">
                                                         {{ method_field('DELETE') }}

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\Gems\CreateRequest;
+use App\Http\Requests\Colours\ColourCreateRequest;
 use App\Models\Colour;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,7 @@ class ColourController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CreateRequest $request)
+    public function store(ColourCreateRequest $request)
     {
         Colour::create([
             'name' => $request->name,

@@ -27,7 +27,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleImage1">Upload</label>
-                                    <input type="file" name="file" class="form-control" id="exampleImage1" placeholder="File upload" value="{{ $gems->image }}" required>
+                                    <input type="file" name="file" class="form-control" id="exampleImage1" placeholder="File upload" value="{{ $gems->getFirstMediaUrl('images') }}">
+                                    <img alt="" src="{{ $gems->getFirstMediaUrl('images') }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPrice1">Price</label>
@@ -55,7 +56,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleSelectType">Type</label>
-                                    <select class="form-select" name="type" id="exampleSelectType">
+                                    <select class="form-select" name="type_id" id="exampleSelectType">
                                         <option>{{ $type->name }}</option>
                                         @if(count($types) > 0)
                                             @foreach($types as $type)

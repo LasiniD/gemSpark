@@ -14,4 +14,9 @@ class Type extends Model
         'description',
         'slug'
     ];
+
+    public function gems()
+    {
+        return $this->hasMany(Gem::class);
+    }
 }

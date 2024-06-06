@@ -37,14 +37,9 @@ class GemController extends Controller
      */
     public function store(CreateRequest $request)
     {
-        if ($file = $request->has('file')) {
-            $file = $request->file('file');
-            $fileName = time().$file->getClientOriginalName();
-            $imagePath = '/images/gems';
-        }
-        Gem::create([
+       $gem =  Gem::create([
             'name' => $request->name,
-            'image' => $request->file->move($imagePath, $fileName),
+            'image' => '/',
             'price' => $request->price,
             'where_from' => $request->from,
             'carat_weight' => $request->c_weight,
@@ -56,6 +51,10 @@ class GemController extends Controller
             'colour_id' => $request->colour,
             'shape_id' => $request->shape
         ]);
+
+       if($request->has('file')){
+           $gem->addMedia($request->file)->toMediaCollection('images');
+       }
 
         $request->session()->flash('success', 'Gem created successfully');
 
@@ -100,6 +99,15 @@ class GemController extends Controller
         $gems = Gem::where('slug', $id)->first();
         $input = $request->all();
         $gems->update($input);
+
+        if ($request->hasFile('file')) {
+            // Delete existing media (consider adding logic for selective deletion)
+            $gems->clearMediaCollection('images');
+
+            // Add new media from uploaded file
+            $gems->addMedia($request->file('file'))->toMediaCollection('images');
+        }
+
         return redirect()->route('gems.index')->with('success', 'Gem updated successfully');
     }
 

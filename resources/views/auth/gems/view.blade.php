@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Image</label>
-                                    <label class="form-control">{{ $gems->image }}</label>
+                                    <label class="form-control"><img width="200px" height="200px" alt="" src="{{ $gems->getFirstMediaUrl('images') }}"></label>
                                 </div>
                                 <div class="form-group">
                                     <label>Price</label>
