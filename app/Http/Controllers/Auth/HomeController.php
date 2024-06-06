@@ -22,7 +22,8 @@ class HomeController extends Controller
     public function show(string $id)
     {
         $gem = \App\Models\Gem::where('slug',$id)->first();
-        return view('pages.single', ['gem' => $gem]);
+        $reviews = $gem->reviews();
+        return view('pages.single', ['gem' => $gem, 'reviews' => $reviews]);
     }
 
 }

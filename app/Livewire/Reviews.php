@@ -35,11 +35,19 @@ class Reviews extends Component
             'gem_id' => $this->gem->id,
         ]);
 
-        dd($review);
 
         $this->rating = '';
         $this->comment = '';
 
-        session()->flash('message', 'Review added successfully.');
+        session()->flash('success', 'Review added successfully.');
+    }
+
+    public function delete($gem,$id)
+    {
+        $review = Review::find($id);
+        $review->delete();
+        session()->flash('danger', 'Review deleted successfully.');
+
+        return redirect()->route('home.show', $gem);
     }
 }

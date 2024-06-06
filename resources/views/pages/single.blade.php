@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div>
-                        <x-one-product :gem="$gem"/>
+                        <x-one-product :gem="$gem" :reviews="$reviews"/>
                     </div>
 
                 </div>

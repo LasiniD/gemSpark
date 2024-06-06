@@ -42,7 +42,7 @@ Route::get('/cart/{cart}', [\App\Http\Controllers\Auth\CartController::class, 'i
 //remove from cart route
 /*Route::get('/cart/{gem}', [\App\Http\Controllers\Auth\CartController::class, 'remove'])->name('cart.remove');*/
 
-/*Route::post('/gems/{gem}/reviews',\App\Livewire\Reviews::class)->name('review.store');*/
+Route::get('/gems/{gem}/delete/{id}',[\App\Livewire\Reviews::class,'delete'])->name('review.delete');
 
 Route::get('/blog', function () {
     return view('pages.blog');
