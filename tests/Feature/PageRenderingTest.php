@@ -67,6 +67,8 @@ class PageRenderingTest extends TestCase
         $response->assertStatus(200);
     }
 
+
+
 }
 
 

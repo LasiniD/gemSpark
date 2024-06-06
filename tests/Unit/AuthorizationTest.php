@@ -15,7 +15,7 @@ class AuthorizationTest extends TestCase
         $user = User::factory()->create([
             'role' => 'ADMIN',
         ]);
-        $response = $this->actingAs($user)->get('/admin/dashboard');
+        $response = $this->$user->get('/admin/dashboard');
         $response->assertStatus(200);
     }
 
