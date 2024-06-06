@@ -63,7 +63,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectType">Type</label>
-                            <select class="form-select" name="type" id="exampleSelectType">
+                            <select class="form-select" name="type_id" id="exampleSelectType">
                                 <option>Choose</option>
                                 @if(count($types) > 0)
                                     @foreach($types as $type)
@@ -74,7 +74,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectColour">Colour</label>
-                            <select class="form-select" name="colour" id="exampleSelectColour">
+                            <select class="form-select" name="colour_id" id="exampleSelectColour">
                                 <option>Choose</option>
                                 @if(count($colours) > 0)
                                     @foreach($colours as $colour)
@@ -85,7 +85,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectShape">Shape</label>
-                            <select class="form-select" name="shape" id="exampleSelectShape">
+                            <select class="form-select" name="shape_id" id="exampleSelectShape">
                                 <option>Choose</option>
                                 @if(count($shapes) > 0)
                                     @foreach($shapes as $shape)

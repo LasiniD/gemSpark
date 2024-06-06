@@ -35,6 +35,6 @@
             </div>
 
         </div>
-        <livewire:reviews></livewire:reviews>
+        <livewire:reviews :gem="$gem" />
     </div>
 @endif

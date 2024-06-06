@@ -13,6 +13,8 @@ class Review extends Model
     protected $fillable = [
         'review',
         'rating',
+        'user_id',
+        'gem_id',
     ];
 
     protected function user(): BelongsTo

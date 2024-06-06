@@ -67,7 +67,7 @@
                                     @endif
                                 @endif
                                 <li>
-                                    <a href="#">Blog</a>
+                                    <a href="{{ route('blog') }}">Blog</a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="ion-ios-arrow-down"></span></a>

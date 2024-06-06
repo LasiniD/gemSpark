@@ -38,6 +38,11 @@ class Cart extends Model
     {
         $cart = Cart::where('gem_id', $gemId)->first();
         $cart->delete();
+
+        //if user is in the view cart page then redirect user to home page
+        /*if (request()->routeIs('cart')) {
+            redirect()->route('home');
+        }*/
     }
 
 }

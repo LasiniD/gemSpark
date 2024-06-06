@@ -8,25 +8,34 @@ use Livewire\Component;
 
 class Reviews extends Component
 {
+
+    public $rating;
+
+    public $comment;
+
+    public $gem;
+
     public function render()
     {
         return view('livewire.reviews');
     }
 
-    public function store(CreateReviewRequest $request)
+    public function store()
     {
-        /*$this->validate([
+
+        $this->validate([
             'rating' => 'required',
             'comment' => 'required',
-        ]);*/
+        ]);
 
         $review = Review::create([
-            'review' => $request->review,
-            'rating' => $request->rating,
-            'comment' => $request->comment,
+            'review' => $this->comment,
+            'rating' => $this->rating,
             'user_id' => auth()->id(),
-            'gem_id' => $request->gem->id,
+            'gem_id' => $this->gem->id,
         ]);
+
+        dd($review);
 
         $this->rating = '';
         $this->comment = '';

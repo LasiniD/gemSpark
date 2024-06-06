@@ -273,10 +273,10 @@
                     <div class="collapse" id="auth">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/samples/blank-page.html"> Users </a>
+                                <a class="nav-link" href="{{ route('users.index') }}"> Users </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/samples/login.html"> Create User </a>
+                                <a class="nav-link" href="{{ route('users.create') }}"> Create User </a>
                             </li>
                         </ul>
                     </div>

@@ -33,7 +33,7 @@
                         @csrf
                         <h3 class="review-box">Review</h3>
                         <div class="form-group-row">
-                            <input type="hidden" name="booking_id" value="{{--{{ $value->id }}--}}">
+                            <input type="text" wire:model="rating">
                             <div class="col">
                                 <div class="rate">
                                     <input type="radio" id="star5" class="rate" name="rating" value="5"/>
@@ -51,11 +51,12 @@
                         </div>
                         <div class="form-group-row">
                             <div class="col">
-                                <textarea class="form-control" name="comment" rows="6 " placeholder="Comment" maxlength="200"></textarea>
+                                <textarea class="form-control" name="comment" wire:model="comment" rows="6 " placeholder="Comment" maxlength="200"></textarea>
                             </div>
                         </div>
                         <div class="submit-button">
-                            <button class="btn btn-sm py-2 px-3 btn-info">Submit
+                            <button class="btn btn-sm py-2 px-3 btn-info" type="submit">
+                                Submit
                             </button>
                         </div>
                     </form>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
-class CreateReviewRequest
+use Illuminate\Foundation\Http\FormRequest;
+
+class CreateReviewRequest extends FormRequest
 {
     public function rules(): array
     {
