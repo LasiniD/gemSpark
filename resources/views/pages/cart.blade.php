@@ -26,12 +26,12 @@
                                         <td>LKR {{ number_format($cart->gem->price,2) }}</td>
                                         <td>{{--{{ $cart->quantity }}--}}1</td>
                                         <td>LKR {{ number_format($cart->total,2) }}</td>
-                                        <td>
-                                            {{--<form action="{{ route('cart.remove',[$cart->gem->id]) }}">
+                                        {{--<td>
+                                            <form action="{{ route('cart.remove',[$cart->gem->id]) }}">
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>--}}
-                                        </td>
+                                            </form>
+                                        </td>--}}
                                     </tr>
                             </tbody>
                         </table>

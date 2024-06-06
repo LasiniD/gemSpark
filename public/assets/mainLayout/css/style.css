@@ -2058,6 +2058,37 @@ font header .navbar-default .navbar-nav li a:hover {
   Single Blog Page
 ==================================================================*/
 
+.container-lr{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.header-lr{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: serif;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgba(25, 66, 142, 0.3);
+}
+
+.body-lr{
+    padding: 30px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgba(25, 66, 142, 0.1);
+}
+
+.body-lr .row{
+    margin: 5px;
+}
+
+.body-lr .row-off{
+    margin: 5px;
+    text-align: center;
+}
 
 .post-single-container{
     display: grid;
