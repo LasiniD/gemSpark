@@ -35,9 +35,6 @@ Route::get('/colour/{colour}', [\App\Http\Controllers\Auth\HomeColourController:
 Route::get('/shape/{shape}', [\App\Http\Controllers\Auth\HomeShapeController::class, 'show'])->name('homeShape.show');
 
 Route::get('/cart/{cart}', [\App\Http\Controllers\Auth\CartController::class, 'index'])->name('cart');
-//remove from cart route
-/*Route::get('/cart/{cart}', [\App\Http\Controllers\Auth\CartController::class, 'remove'])->name('cart.remove');*/
-
 
 Route::get('/gems/{gem}/delete/{id}',[\App\Livewire\Reviews::class,'delete'])->name('review.delete');
 

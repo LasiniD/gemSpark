@@ -24,7 +24,7 @@
                                 <table id="gems-table" class="table table-striped">
                                     <thead>
                                     <tr>
-                                        <th> Image </th>
+                                        {{--<th> Image </th>--}}
                                         <th> Name </th>
                                         <th> Email </th>
                                         <th> Role </th>
@@ -34,13 +34,13 @@
                                     <tbody>
                                     @foreach($users as $user)
                                         <tr>
-                                            <td class="py-1">
+                                            {{--<td class="py-1">
 
-                                                {{--images are not showing ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--}}
+                                                images are not showing ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                                {{--<img src="{{ $user->getFirstMediaUrl('users') }}" alt="image" />--}}
-                                                {{--<img src="{{ asset('images/gems').'/'.$gem->image }}" alt="image" />--}}
-                                            </td>
+                                                <img src="{{ $user->getFirstMediaUrl('users') }}" alt="image" />
+                                                <img src="{{ asset('images/gems').'/'.$gem->image }}" alt="image" />
+                                            </td>--}}
                                             <td> {{ $user->name }} </td>
                                             {{--
                                             <td> {!! Str::limit($gem->name,15,'...') !!} </td>

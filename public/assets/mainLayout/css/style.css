@@ -2074,6 +2074,11 @@ font header .navbar-default .navbar-nav li a:hover {
     background-color: rgba(25, 66, 142, 0.3);
 }
 
+.description{
+    margin: 10px;
+    padding: 20px;
+}
+
 .body-lr{
     padding: 30px;
     margin: 10px;

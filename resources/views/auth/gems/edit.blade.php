@@ -28,7 +28,7 @@
                                 <div class="form-group">
                                     <label for="exampleImage1">Upload</label>
                                     <input type="file" name="file" class="form-control" id="exampleImage1" placeholder="File upload" value="{{ $gems->getFirstMediaUrl('images') }}">
-                                    <img alt="" src="{{ $gems->getFirstMediaUrl('images') }}">
+                                    <img alt="" src="{{ $gems->getFirstMediaUrl('images') }}" width="200px">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPrice1">Price</label>
@@ -57,32 +57,29 @@
                                 <div class="form-group">
                                     <label for="exampleSelectType">Type</label>
                                     <select class="form-select" name="type_id" id="exampleSelectType">
-                                        <option>{{ $type->name }}</option>
                                         @if(count($types) > 0)
                                             @foreach($types as $type)
-                                                <option @selected(old('type') == $type->id) value="{{$type->id}}">{{$type->name}}</option>
+                                                <option @selected(old('type_id') == $type->id) value="{{$type->id}}">{{$type->name}}</option>
                                             @endforeach
                                         @endif
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleSelectColour">Colour</label>
-                                    <select class="form-select" name="colour" id="exampleSelectColour">
-                                        <option>{{ $colour->name }}</option>
+                                    <select class="form-select" name="colour_id" id="exampleSelectColour">
                                         @if(count($colours) > 0)
                                             @foreach($colours as $colour)
-                                                <option @selected(old('colour') == $colour->id) value="{{$colour->id}}">{{$colour->name}}</option>
+                                                <option @selected(old('colour_id') == $colour->id) value="{{$colour->id}}">{{$colour->name}}</option>
                                             @endforeach
                                         @endif
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleSelectShape">Shape</label>
-                                    <select class="form-select" name="shape" id="exampleSelectShape">
-                                        <option>{{ $shape->name }}</option>
+                                    <select class="form-select" name="shape_id" id="exampleSelectShape">
                                         @if(count($shapes) > 0)
                                             @foreach($shapes as $shape)
-                                                <option @selected(old('shape') == $shape->id) value="{{$shape->id}}">{{$shape->name}}</option>
+                                                <option @selected(old('shape_id') == $shape->id) value="{{$shape->id}}">{{$shape->name}}</option>
                                             @endforeach
                                         @endif
                                     </select>

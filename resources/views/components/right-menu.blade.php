@@ -18,15 +18,15 @@
         <div class="widget widget-tag">
             <h4 class="widget-title">Tag Cloud</h4>
             <ul class="widget-tag-list">
-                <li><a href="#">Animals</a>
+                <li><a href="{{ route('homeColour.show',['blue']) }}">Blue</a>
                 </li>
-                <li><a href="#">Landscape</a>
+                <li><a href="{{ route('homeType.show','sapphire') }}">Sapphire</a>
                 </li>
-                <li><a href="#">Portrait</a>
+                <li><a href="{{ route('homeColour.show',['red']) }}">Red</a>
                 </li>
-                <li><a href="#">Wild Life</a>
+                <li><a href="{{ route('homeShape.show',['square']) }}">Square</a>
                 </li>
-                <li><a href="#">Video</a>
+                <li><a href="{{ route('homeShape.show',['oval']) }}">Oval</a>
                 </li>
             </ul>
         </div> <!-- End tag  -->

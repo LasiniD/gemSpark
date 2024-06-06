@@ -33,10 +33,10 @@
                                     <label for="exampleInputName1">Name</label>
                                     <input type="text" name="name" class="form-control" id="exampleInputName1" placeholder="Name" value="{{ old('name') }}" required>
                                 </div>
-                                <div class="form-group">
+                                {{--<div class="form-group">
                                     <label for="exampleImage1">Upload</label>
                                     <input type="file" name="file" class="form-control" id="exampleImage1" placeholder="File upload">
-                                </div>
+                                </div>--}}
                                 <div class="form-group">
                                     <label for="exampleInputEmail">Email</label>
                                     <input type="email" name="email" class="form-control" id="exampleInputEmail" placeholder="Email" {{--value="{{ old('email') }}"--}} required>

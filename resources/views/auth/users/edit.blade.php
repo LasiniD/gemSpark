@@ -21,11 +21,11 @@
                             <form method="post" action="{{ route('users.update', ['user' => $users->id]) }}" class="forms-sample" enctype="multipart/form-data">
                                 @csrf
                                 @method('PATCH')
-                                <div class="form-group">
+                                {{--<div class="form-group">
                                     <label for="exampleImage1">Upload</label>
-                                    <input type="file" name="file" class="form-control" id="exampleImage1" placeholder="File upload" value="{{--{{ $users->getFirstMediaUrl('users') }}--}}">
-                                    <img alt="" src="{{--{{ $gems->getFirstMediaUrl('images') }}--}}">
-                                </div>
+                                    <input type="file" name="file" class="form-control" id="exampleImage1" placeholder="File upload" value="--}}{{--{{ $users->getFirstMediaUrl('users') }}--}}{{--">
+                                    <img alt="" src="--}}{{--{{ $gems->getFirstMediaUrl('images') }}--}}{{--">
+                                </div>--}}
                                 <div class="form-group">
                                     <label for="exampleInputName1">Name</label>
                                     <input type="text" name="name" class="form-control" id="exampleInputName1" placeholder="Name" value="{{ $users->name }}" required>

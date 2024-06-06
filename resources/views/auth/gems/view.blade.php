@@ -66,24 +66,7 @@
                                     <label class="form-control">{{ $shapes->name }}</label>
                                 </div>
 
-                                {{--<div class="form-group">
-                                    <label for="exampleSelectGender">Gender</label>
-                                    <select class="form-select" id="exampleSelectGender">
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                    </select>
-                                </div>--}}
-
-                                {{--<div class="form-group">
-                                    <label for="exampleInputCity1">City</label>
-                                    <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
-                                </div>--}}
-                                {{--<div class="form-group">
-                                    <label for="exampleTextarea1">Textarea</label>
-                                    <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                                </div>--}}
-
-                                <a class="btn btn-gradient-primary me-2">Edit</a>
+                                <a class="btn btn-gradient-primary me-2" href="{{ route('gems.edit',['gem' => $gems->slug]) }}">Edit</a>
                                 <a href="{{ route('gems.index') }}" class="btn btn-light">Back</a>
 
 

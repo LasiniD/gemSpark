@@ -66,18 +66,16 @@
                                         <li><a href="{{ route('auth.dashboard') }}">ADMIN</a></li>
                                     @endif
                                 @endif
-                                <li>
-                                    <a href="{{ route('blog') }}">Blog</a>
-                                </li>
-                                <li class="dropdown">
+
+                                {{--<li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="ion-ios-arrow-down"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="about.html">About Us</a></li>
                                         <li><a href="coming-soon.html">Contact Us</a></li>
                                         <li><a href="faq.html">FAQ</a></li>
-                                        {{--<li><a href="pricing.html">Pricing Table</a></li>--}}
+                                        --}}{{--<li><a href="pricing.html">Pricing Table</a></li>--}}{{--
                                     </ul>
-                                </li>
+                                </li>--}}
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="ion-ios-arrow-down"></span></a>
                                     <ul class="dropdown-menu">
