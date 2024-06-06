@@ -87,7 +87,7 @@
                                             @endif
                                         @endguest
                                         @if(Auth::user())
-                                            <li><a>Profile</a></li>
+                                            {{--<li><a>Profile</a></li>--}}
                                             <li><a href="{{ route('logout') }}">Logout</a></li>
                                         @endif
                                     </ul>

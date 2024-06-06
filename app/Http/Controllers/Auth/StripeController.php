@@ -46,7 +46,7 @@ class StripeController extends Controller
 
 
         $checkoutSession = \Stripe\Checkout\Session::create([
-            /*'payment_method_types' => ['card'],*/
+            'payment_method_types' => ['card'],
             'line_items' => $productItems,
             'mode' => 'payment',
             'allow_promotion_codes' => true,
@@ -71,11 +71,11 @@ class StripeController extends Controller
             $cart->save();
         }
 
-        return "Thank you for your order. Your payment was successful. The seller will reach out to you as soon as possible";
+        return view('success');
     }
 
     public function cancel()
     {
-        return "Cancelled";
+        return view('cancel');
     }
 }
